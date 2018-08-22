@@ -37,11 +37,17 @@ public class Order {
     }
 
     public void setMember(Member member) {
+        // 과거 연계된 회원정보가 있는경우
         if (this.member != null) {
-            this.member.getOrders().remove(this);
+            // 해당 회원으로부터 내 자신을 제거
+            this.member.getOrders().remove(this); // 방향 제거
         }
+
+        // 앞으로 추가될 회원의 주문 목록에 주문을 추가
+        member.getOrders().add(this); // 뱡항 추가
+
+        // 회원 셋업
         this.member = member;
-        this.member.getOrders().add(this);
     }
 
     public List<OrderItem> getOrderItems() {
