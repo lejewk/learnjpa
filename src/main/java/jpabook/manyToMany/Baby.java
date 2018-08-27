@@ -1,4 +1,4 @@
-package jpabook.domain;
+package jpabook.manyToMany;
 
 import javax.persistence.*;
 import java.util.ArrayList;
